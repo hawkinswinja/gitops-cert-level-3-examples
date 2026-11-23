@@ -5,11 +5,11 @@ metadata:
   namespace: argocd  
 spec:
   goTemplate: true
-  goTemplateOptions: ["missingkey=error"]
+  goTemplateOptions: ["missingkey=error"
   generators:
   - pullRequest:
       github:
-        owner: codefresh-contrib
+        owner: hawkinswinja
         repo: gitops-cert-level-3-examples
       requeueAfterSeconds: 180
   template:
@@ -17,7 +17,7 @@ spec:
       name: 'myapp-{{.branch}}'
     spec:
       source:
-        repoURL: 'https://github.com/codefresh-contrib/gitops-cert-level-3-examples.git'
+        repoURL: 'https://github.com/hawkinswinja/gitops-cert-level-3-examples.git'
         targetRevision: HEAD
         path: preview-environments/kustomize-preview-app/ 
         kustomize:
